@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Bridge image - Perfect size and visibility */
+.bridge-image {
+  background: transparent !important;
+  /* Enhanced filters for perfect bridge appearance */
+  filter:
+    contrast(180%)
+    saturate(140%)
+    brightness(1.3)
+    drop-shadow(0 8px 16px rgba(255, 255, 255, 0.4))
+    drop-shadow(0 0 20px rgba(123, 58, 237, 0.3));
+  /* Smooth scaling for better quality */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* If the above makes it too dark, try this alternative */
+.bridge-image-alt {
+  background: transparent !important;
+  filter:
+    contrast(300%)
+    brightness(0.1)
+    saturate(0)
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+  mix-blend-mode: multiply;
+}
+
+/* Animated Blue Gradient Backgrounds */
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes gradient-y {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: center top;
+  }
+  50% {
+    background-size: 400% 400%;
+    background-position: center bottom;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  will-change: background-position;
+  animation: gradient-x 8s ease infinite;
+}
+
+.animate-gradient-y {
+  background-size: 400% 400%;
+  will-change: background-position;
+  animation: gradient-y 12s ease infinite;
+}
+
+/* Pause heavy background animations while scrolling */
+html.scrolling .animate-gradient-x,
+html.scrolling .animate-gradient-y {
+  animation-play-state: paused;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient-x, .animate-gradient-y {
+    animation: none !important;
+  }
+}
+
+/* Enhanced bridge styling - Full color visibility */
+.bridge-enhanced {
+  filter: contrast(200%) brightness(1.4) saturate(180%) hue-rotate(0deg);
+  mix-blend-mode: normal;
+}
+
+/* Enhanced bridge styling - Crystal clear visibility */
+.bridge-enhanced-clear {
+  filter: contrast(250%) brightness(1.6) saturate(200%) sharpen(1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  mix-blend-mode: normal;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Watermark bridge styling - Full color visibility */
+.watermark-filter {
+  filter: grayscale(0%) opacity(1) contrast(180%) brightness(1.3) saturate(150%);
+  mix-blend-mode: normal;
+}
