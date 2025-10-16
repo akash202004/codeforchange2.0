@@ -5,6 +5,7 @@ import ScrollVelocity from "./ScrollVelocity";
 import ScrollVelocityContent from "./ScrollVelocityContent";
 import Dock from "./Dock";
 import ProfileCard from "./ProfileCard";
+import BottomNavigation from "./BottomNavigation";
 
 import { useState } from "react";
 import { motion } from "motion/react";
@@ -136,71 +137,75 @@ export default function Home() {
           </div>
 
           {/* Hero Content */}
-                <div className="relative z-10 max-w-4xl mx-auto">
-                <div className="mb-2">
-                  <span className="inline-block px-8 py-4 bg-blue-100/80 text-blue-800 rounded-full text-2xl md:text-3xl lg:text-4xl font-bold" style={{ fontFamily: 'Michroma, sans-serif' }}>
-                  Welcome to
-                  </span>
-                </div>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-blue-900 mb-6 leading-tight" style={{ fontFamily: 'Michroma, sans-serif' }}>
-                  Cloud Native
-                  <span className="block text-blue-700 font-bold">Durgapur</span>
-                </h1>
-                <div className="flex justify-center">
-                  <motion.button
-                    className="px-8 py-4 bg-white/5 text-blue-700 rounded-xl font-semibold transition-colors duration-300 flex items-center gap-3 font-bold backdrop-blur-sm ring-1 ring-blue-600/30 hover:ring-blue-600/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/60"
-                    whileHover={{ scale: 1.12 }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ type: "spring", mass: 0.1, stiffness: 150, damping: 12 }}
-                  >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                  </svg>
-                  <span className="font-bold">Join Discord</span>
-                  </motion.button>
-                </div>
-                </div>
-              </div>
+          <div className="relative z-10 max-w-4xl mx-auto">
+            <div className="mb-2">
+              <span className="inline-block px-8 py-4 bg-blue-100/80 text-blue-800 rounded-full text-2xl md:text-3xl lg:text-4xl font-bold" style={{ fontFamily: 'Michroma, sans-serif' }}>
+                Welcome to
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-blue-900 mb-6 leading-tight" style={{ fontFamily: 'Michroma, sans-serif' }}>
+              Cloud Native
+              <span className="block text-blue-700 font-bold">Durgapur</span>
+            </h1>
+            <div className="flex justify-center">
+              <motion.button
+                className="px-8 py-4 bg-white/5 text-blue-700 rounded-xl transition-colors duration-300 flex items-center gap-3 font-bold backdrop-blur-sm ring-1 ring-blue-600/30 hover:ring-blue-600/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/60"
+                whileHover={{ scale: 1.12 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", mass: 0.1, stiffness: 150, damping: 12 }}
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                </svg>
+                <span className="font-bold">Join Discord</span>
+              </motion.button>
+            </div>
+          </div>
+        </div>
 
-              {/* Socials - Right side in Hero */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden sm:flex flex-col items-center gap-3 z-30">
-                <div className="w-px h-10 bg-blue-300/60"></div>
-                {(() => {
-                  const items = [
-                    { icon: (
-                        <svg className="w-5 h-5 text-[#1DA1F2]" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.954 4.569c-.885.392-1.83.656-2.825.775-1.049-1.124-2.523-1.706-4.117-1.706-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.166-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.631 1.953 2.445 3.376 4.6 3.415-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
-                      ), label: 'Twitter', href: 'https://twitter.com/yourhandle' },
-                    { icon: (
-                        <svg className="w-5 h-5 text-[#0A66C2]" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.06C12.6 8.62 14.18 8 16.1 8 20.06 8 22 10.45 22 14.76V24h-4v-7.3c0-1.74-.03-3.98-2.42-3.98-2.42 0-2.79 1.88-2.79 3.84V24h-4V8z"/></svg>
-                      ), label: 'LinkedIn', href: 'https://www.linkedin.com/company/yourpage' },
-                    { icon: (<img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" className="w-5 h-5" />), label: 'Instagram', href: 'https://www.instagram.com/yourhandle' },
-                    { icon: (<img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" className="w-5 h-5" />), label: 'Discord', href: 'https://discord.gg/yourinvite' },
-                  ];
-                  return (
-                    <Dock
-                      items={items}
-                      panelHeight={220}
-                      baseItemSize={44}
-                      magnification={60}
-                      orientation="vertical"
-                    />
-                  );
-                })()}
-                <div className="w-px h-10 bg-blue-300/60"></div>
-              </div>
+        {/* Socials - Right side in Hero */}
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden sm:flex flex-col items-center gap-3 z-30">
+          <div className="w-px h-10 bg-blue-300/60"></div>
+          {(() => {
+            const items = [
+              {
+                icon: (
+                  <svg className="w-5 h-5 text-[#1DA1F2]" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.954 4.569c-.885.392-1.83.656-2.825.775-1.049-1.124-2.523-1.706-4.117-1.706-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.166-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.631 1.953 2.445 3.376 4.6 3.415-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
+                ), label: 'Twitter', href: 'https://twitter.com/yourhandle'
+              },
+              {
+                icon: (
+                  <svg className="w-5 h-5 text-[#0A66C2]" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.06C12.6 8.62 14.18 8 16.1 8 20.06 8 22 10.45 22 14.76V24h-4v-7.3c0-1.74-.03-3.98-2.42-3.98-2.42 0-2.79 1.88-2.79 3.84V24h-4V8z" /></svg>
+                ), label: 'LinkedIn', href: 'https://www.linkedin.com/company/yourpage'
+              },
+              { icon: (<img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" className="w-5 h-5" />), label: 'Instagram', href: 'https://www.instagram.com/yourhandle' },
+              { icon: (<img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" className="w-5 h-5" />), label: 'Discord', href: 'https://discord.gg/yourinvite' },
+            ];
+            return (
+              <Dock
+                items={items}
+                panelHeight={220}
+                baseItemSize={44}
+                magnification={60}
+                orientation="vertical"
+              />
+            );
+          })()}
+          <div className="w-px h-10 bg-blue-300/60"></div>
+        </div>
 
-              </section>
+      </section>
 
-              {/* Marquee Section */}
-                <section className="relative z-30 py-2 bg-blue-600 text-white overflow-hidden -mt-10 md:-mt-16">
-                  <ScrollVelocity
-                    texts={["SEE YOU SOON!!!!"]}
-                    velocity={80}
-                    className="text-xl font-bold"
-                  />
-                </section>
+      {/* Marquee Section */}
+      <section className="relative z-30 py-2 bg-blue-600 text-white overflow-hidden -mt-10 md:-mt-16">
+        <ScrollVelocity
+          texts={["SEE YOU SOON!!!!"]}
+          velocity={80}
+          className="text-xl font-bold"
+        />
+      </section>
 
-                    {/* About Section with Photo Slideshows */}
+      {/* About Section with Photo Slideshows */}
       <section id="about" className="relative z-20 py-12 overflow-hidden will-change-transform">
         <div className="container mx-auto px-4">
           {/* Section Header (About) */}
@@ -321,16 +326,16 @@ export default function Home() {
           </p>
           <div className="flex justify-center gap-4">
             <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-lg flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                <span>Get Directions</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              <span>Get Directions</span>
             </button>
             <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-lg flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                <span>View Event Guide</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              <span>View Event Guide</span>
             </button>
             <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-lg flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7c0-1.1.9-2 2-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                <span>Explore Tracks</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7c0-1.1.9-2 2-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              <span>Explore Tracks</span>
             </button>
           </div>
         </div>
@@ -615,7 +620,7 @@ export default function Home() {
             ];
 
             const card = (t, key) => {
-              const initials = t.name.split(' ').map(n => n[0]).slice(0,2).join('').toUpperCase();
+              const initials = t.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
               return (
                 <div key={key} className="w-[320px] shrink-0 rounded-xl border border-blue-300/50 bg-white/10 backdrop-blur-md shadow-sm p-5 flex flex-col gap-4">
                   <p className="text-blue-900 leading-relaxed">“{t.quote}”</p>
@@ -712,7 +717,7 @@ export default function Home() {
 
 
       {/* Footer */}
-      <footer className="relative z-20 bg-blue-900 text-white py-12">
+      <footer className="relative z-20 bg-blue-900 text-white py-12 pb-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
@@ -735,6 +740,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Bottom Navigation */}
+      <BottomNavigation />
     </div>
   );
 }
